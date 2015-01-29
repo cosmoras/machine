@@ -279,6 +279,33 @@ Options:
   - `--softlayer-private-net-only`: Disable public networking
   - `--softlayer-region`: softlayer region
 
+### CenturyLink Cloud
+
+Create machines on [CenturyLink Cloud](http://www.centurylinkcloud.com). The
+same username and password you use to access the CenturyLink Cloud console is
+required during server creation. Your credentials will not be stored anywhere,
+but they are required to fetch an API access token that will be persisted.
+
+Options:
+
+ - `--centurylinkcloud-username`: **required** CLC username
+ - `--centurylinkcloud-password`: CLC password. If omitted, you will be
+   prompted for it during server creation.
+ - `--centurylinkcloud-server-name`: **required** Server name. Subject to the
+   same length requirements as a server created on the console.
+ - `--centurylinkcloud-group-id`: **required** Group ID. The group the server
+   will be created in. This will also determine the datacenter. If you do not
+   have a group, you must create one. The ID can be determined by looking at
+   the last segment of the URL when viewing the group in the control panel,
+   e.g. `il1-12345`.
+ - `--centurylinkcloud-source-server-id`: An optional template ID or the ID of
+   an existing server to use when creating. It will otherwise default to the
+   Ubuntu template.
+ - `--centurylinkcloud-cpu`: The number of CPUs for the created instance.
+   Defaults to 1.
+ - `--centurylinkcloud-memory-gb`: The amount of RAM in GB for the created
+   server. Defaults to 2.
+
 ## Contributing
 
 [![GoDoc](https://godoc.org/github.com/docker/machine?status.png)](https://godoc.org/github.com/docker/machine)
