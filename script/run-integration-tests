@@ -1,3 +1,3 @@
 #!/bin/sh
-godep go test -v ./_integration-test
+godep go test -timeout 20m -v ./_integration-test
 
